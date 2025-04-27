@@ -8,3 +8,12 @@ def get_num_words(text):
 text = get_book_text("books/frankenstein.txt")
 num_words = get_num_words(text)
 print(f"{num_words} words found in the document")
+
+def count_characters (text):
+     numbers_dictionary = {}
+     lowercase_text = text.lower()
+     for letter in lowercase_text:
+        if letter in numbers_dictionary:
+          numbers_dictionary[letter] = numbers_dictionary[letter] + 1
+        else: numbers_dictionary[letter] = 1
+     return numbers_dictionary   
