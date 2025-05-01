@@ -1,7 +1,8 @@
+import sys
 from stats import get_book_text, get_num_words, count_characters, turn_dictionary_into_sorted_list
 
 def main():
-    filepath = "books/frankenstein.txt"
+    filepath = sys.argv[1]
     text = get_book_text(filepath)
     word_counts = get_num_words(text)
     character_counts = count_characters(text)
@@ -19,4 +20,8 @@ def main():
     print("============= END ===============")
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     main()
+    
